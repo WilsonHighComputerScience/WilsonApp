@@ -1,0 +1,758 @@
+﻿/*
+ * Jesus Fonts!
+ */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype'), url('../fonts/OpenSans-Regular.svg#OpenSans-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-SemiBold.ttf') format('truetype'), url('../fonts/OpenSans-SemiBold.svg#OpenSans-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-ExtraLight.ttf') format('truetype'), url('../fonts/Montserrat-ExtraLight.svg#Montserrat-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BenjaminFont';
+    src:    url('../fonts/geometricslabserif703boldbt.ttf') format('truetype'), 
+            url('../fonts/geometricslabserif703boldbt.svg#geometricslabserif703boldbt5942f8f8b47f4') format('svg');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype'), url('../fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-SemiBold.ttf') format('truetype'), url('../fonts/Montserrat-SemiBold.svg#Montserrat-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/*
+ * Other Stuff
+ */
+
+ * {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    user-select: none;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.smallT {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 3.5vw;
+    white-space: normal;
+}
+
+/*
+ * Background CSS
+ * Displays the image and fancy gradient thingy
+ * Making the top of the app all pretty pretty
+ */
+
+/* Background Image CSS */
+.image {
+    position: fixed;
+    min-height: 100vh;
+    min-width: 100vw;
+    /* centering hack */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    /*background-image: url("../images/background.jpg");*/
+    /*background-image: url('https://imgur.com/download/YjfZHY1');*/
+}
+
+/* Background Trancperency Gradient */
+.shader {
+    position: fixed;
+    top: 50vh;
+    width: 100vw;
+    height: 43vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5));
+}
+
+/*
+ * Top Content CSS
+ * Styles the text that shows the important nonsense that we actually
+ * launched the app for
+ */
+
+/* Global Top Section Text CSS */
+
+/* Background Text (A) */
+.backText {
+    font-family: "BenjaminFont"; /* Benjamin, this is for you */
+    color: white;
+    font-size: 170vw;
+    opacity: 0.5;
+    position: fixed;
+    bottom: -20vh;
+    left: -22vw;
+}
+
+/* Lower text wrapper stuff (for fancy animation) */
+#textWrap {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    /* Note: 5vw is left ofsett, and 6.5vh is menu bar height */
+    bottom: calc(5vw + 6.5vh);
+    left: 5vw;
+}
+
+/* Period Text (Period 3) */
+.periodText {
+    font-size: 13.5vw;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5vh;
+}
+
+/* Time Left Text */
+.timeText {
+    text-transform: capitalize;
+    font-size: 7vw;
+    color: white;
+}
+
+
+/**
+ * First launch splashscreen CSS
+ * Put the background image at the front, pop the splash in it, and display a little loading bar
+ */
+
+.loadCover {
+    z-index: 99; /* sigh */
+    content: url('../model/splash.png') !important;
+    max-height: 100vh;
+}
+
+.loadGif {
+    display: initial !important;
+    position: fixed;
+    top: 77%;
+    left: 50%;
+    transform: translate(-50%);
+    max-width: 35vw;
+    z-index: 19999;
+    content: url("../images/loading.gif");
+}
+
+/* Menu Button CSS */
+.sideButton {
+    z-index: 99; /* If there ever was a feature of CSS that clearly had good intentions, this would be it */
+    background-origin: content-box;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 5.1vh;
+    height: 5.1vh;
+    padding: 1.8vh 1.8vh 1.8vh 1.8vh;
+}
+
+#menuButton {
+    background-image: url("../images/navicon.png");
+}
+
+.textPos {
+    height: 8.7vh;
+    margin-left: 16vw;
+    display: flex;
+    align-items: center;
+}
+
+.barText {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 5vw;
+    text-transform: capitalize;
+}
+
+/*
+ * Bottom Bar CSS
+ * Styles the menu slider bar thingy
+ * at the bottom of the screen
+ */
+
+/* Whole bar CSS */
+#menuBar {
+    table-layout: fixed;
+    background-color: #636363;
+    width: 100vw;
+    height: 7.1vh;
+    position: fixed;
+    top: 92.95vh;
+}
+
+/* Wrapper and CSS for line indicator */
+#menuWrap {
+    width: 100vw;
+    position: fixed;
+    top: 99.5vh;
+    background-color: #636363;
+}
+
+#menuLine {
+    width: 33vw;
+    height: 0.5vh;
+    background-color: white
+}
+
+/* Text stuff */
+.menu {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.menuText {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 4.5vw;
+    color: white;
+}
+
+/* 
+ * Slidy Thingy CSS
+ * Attempts to put a bunch of pages all side by side
+ * Then allows you to swipe between them
+ */
+
+/* Wrapper div, aka the viewport */
+.js_frame {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    transition: height 1ms;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+/* Top Bar Positioning CSS */
+.topH {
+    height: 8.7vh;
+}
+
+.topPos {
+    display: flex;
+    flex-flow: column nowrap;
+    transition: height 1ms linear;
+    flex-shrink: 0;
+}
+
+/* Status Bar Gradient CSS */
+
+.barShade {
+    flex-grow: 1;
+    background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.55));
+}
+
+
+/* Top Menu Bar CSS */
+.topBar {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    background-color: #636363;
+    z-index: 99; /* sigh */
+    display: flex;
+    align-items: flex-end;
+}
+
+#mainBar {
+    left: 100vw;
+}
+
+/* Content div, contains all the elements we want to scroll through */
+.js_slides {
+    white-space: nowrap;
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+}
+
+/* wrap div, CSS for each content item */
+.js_slide {
+    flex-shrink: 0;
+    width: 100vw;
+    display: flex;
+    overflow-y: hidden;
+    /* Prevent text resize on orientation change, useful for web-apps */
+	-webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/*hardware hack*/
+.scrollHack {
+    /* Put the scroller into the HW Compositing layer right from the start */
+	-webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    position: absolute;
+    width: 100vw;
+}
+
+.full {
+    flex-grow: 1;
+    width: 100vw;
+    background-color: white;
+}
+
+.menuSpace {
+    height: 7.05vh;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/**
+ * Side Menu CSS
+ * CSS which styles the left side menu activited by the button in the top right
+ * Won't have any affect on HTML until javascript loads the menu in
+ * Also will be based on my UIItem Framework somehow
+ * Also Lory for sliding fancyness
+ */
+
+/* Sidemenu frame div */
+.SMFrame {
+    position: fixed;
+    /* if you change width, change the constant present in MenuUI.ts*/
+    width: 70vw;
+    height: 100vh;
+    z-index: 99;
+}
+
+/* Shadow effect div */
+.SMShadow {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0;
+}
+
+/* Sidemenu content div */
+.SMCont {
+    position: fixed;
+    width: 170vw;
+    height: 100vh;
+    white-space: nowrap;
+    transform: translateX(-70vw);
+}
+
+/* Generic slide CSS */
+.SMSlide {
+    width: 70vw;
+    height: 100vh;
+    float: left;
+}
+
+/* Blank slide CSS */
+.blank {
+    width: 100vw;
+}
+
+/* Actual Side Menu CSS */
+#sideMenu {
+    background-color: #EFEFEF;
+    box-shadow: -1px 0px 2px rgba(0, 0, 0, 0.2), 1px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Header of side menu CSS */
+.SMHead {
+    width: 100%;
+    height: 20vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../images/WHS.jpg");
+}
+
+/* Text in header CSS */
+.SMTopText {
+    position: relative;
+    top: 14.5vh;
+    left: 5vw;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 5vw;
+}
+
+/* List of buttons in sidemenu CSS */
+/* Global item list CSS */
+.SMItems {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Individual item CSS */
+.SMItem {
+    background-size: 4vh 4vh;
+    background-position-x: 5vw;
+    background-position-y: 1.5vh;
+    background-repeat: no-repeat;
+    width: 70vw;
+    min-height: 7vh;
+    display: flex;
+    align-items: center;
+    transition: background-color 250ms linear;
+}
+
+/* Text in individual item CSS */
+.SMItemText {
+    font-size: 4vw;
+    margin-left: 18vw;
+}
+
+/* Bottom section of menu CSS */
+.SMBot {
+    position: absolute;
+    bottom: 0;
+}
+
+/* quote CSS */
+.quote {
+    color: gray;
+    margin-left: 4vw;
+    font-style: italic;
+    width: 65vw;
+}
+
+/*
+ * Schedule and events CSS
+ * We'll see how this goes
+ */
+
+/* Header CSS */
+.header {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 5vw;
+    padding: 1.6vh 0 1vh 4vw;
+}
+
+/* Whole row CSS */
+.justRow {
+    width: 100vw;
+    min-height: 10vh;
+    display: flex;
+    align-items: stretch;
+}
+
+/* Left cell with times CSS */
+.leftCell {
+    width: 30vw;
+    display: flex;
+    align-items: center;
+}
+
+.incep {
+    /* My apologies for crappy centering hack */
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: 'Open Sans', sans-serif;
+    margin-right: 4.5vw;
+    text-transform: uppercase;
+}
+
+.leftUp {
+    margin-bottom: 0.6vh;
+    font-weight: 400;
+    font-size: 4vw;
+}
+
+.leftLow {
+    color: gray;
+    font-size: 3.5vw;
+}
+
+/* Right Cell CSS */
+.rWrap {
+    display: flex;
+    align-items: center;
+}
+
+/* Name Text */
+.rText {
+    margin-left: 4.5vw;
+    margin-top: -0.25vh;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 5vh;
+}
+
+/* eventually needed */
+.smallRText {
+    font-size: 5vh;
+}
+
+/* Inline Event Row CSS */
+.eventCol {
+    vertical-align: top;
+}
+
+/* Regular Event Row CSS */
+.evRow {
+    width: 100vw;
+    min-height: 8vh;
+    display: flex;
+    align-items: stretch;
+}
+
+/* Small Event Row CSS */
+.evSmall {
+    min-height: 4vh;
+}
+
+/* This is in addition to evText */
+.evRight {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4vw;
+    margin-bottom: 0.5vh;
+    margin-left: 4.5vw;
+}
+
+/* event description popup CSS */
+.evDesc {
+    padding: 0 1vw 1vh 4vw;
+    overflow: hidden;
+    color: black;
+}
+
+.evDescHead {
+    margin: 1vh 0.6vh 0 0;
+}
+
+.evDescBody {
+    font-weight: 400;
+    color: #636363;
+}
+
+.evSlideShow {
+    display: block !important;
+    max-height: 100vh !important;
+    transition: max-height 150ms cubic-bezier(0.95, 0.05, 0.795, 0.035) !important;
+}
+
+.evSlide {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #DCDCDC;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+    transition: max-height 400ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+/**
+ * Button to show more events CSS
+ */
+
+.evButton {
+     width: 100vw;
+     margin-top: 1.6vh;
+ }
+
+/**
+ * Global button effect CSS
+ */
+
+.bTouch {
+    transition: background-color 1s linear;
+    background-color: lightgrey;
+}
+
+/**
+ * Resource page CSS
+ */
+
+.resHead {
+    padding: 0;
+    margin-left: 4vw;
+    min-height: 8.5vh;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.resRow {
+    min-height: 7.5vh;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    border-top: 1px solid lightgray;
+}
+
+/**
+ * In-app external page CSS
+ * Will handle opening of things like the settings and credits 
+ */
+
+#page {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 100vh;
+    background-color: #EFEFEF;
+    transition: transform 450ms cubic-bezier(0.1, 0.57, 0.1, 1) 100ms;
+    z-index: 8;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.pShown {
+    transform: translateY(-100vh);
+    box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#pageAdd {
+    position: absolute;
+    height: 91.3vh;
+}
+
+/**
+ * Page menubar clone CSS
+ */
+
+#pageButton {
+    background-image: url("../images/back.png");
+}
+
+/**
+ * Imitation HTML Toast CSS
+ * Will serve as my error handler
+ * As opposed to bringing up a stack extange search every time
+ */
+
+.tHidden {
+    position: fixed;
+    top: 100vh;
+    width: 100vw;
+    height: 3vh;
+    z-index: 999;
+    background-color: #333;
+    padding: 3vh 4.5vw 2.65vh 4.5vw;
+    transition: transform 300ms cubic-bezier(0.1, 0.57, 0.1, 1);
+}
+
+.tShown {
+    transform: translateY(-8.65vh);
+}
+
+.tText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5vh;
+    color: white;
+}
+
+/**
+ * Credits page CSS
+ * If you're gonna have a credit, might as well make it fancy
+ */
+
+/* Top pretty display CSS */
+.credTop {
+    text-align: center;
+    width: 100vw;
+    height: 40vh;
+}
+
+.credShd {
+    width: 100vw;
+    height: 20vh;
+    position: relative;
+    top: 20vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.85));
+}
+
+.credIcon {
+    max-height: 12vh;
+    display: block;
+    margin: 0 auto 0 auto;
+    position: relative;
+    top: -5vh;
+    content: url('../model/icon.png');
+}
+
+.credIconText {
+    color: white;
+    font-family: "Montserrat";
+    font-size: 6vw;
+    position: relative;
+    top: 13vh;
+}
+
+.credImg {
+    position: absolute;
+    height: 50vh;
+    width: 100vw;
+    background-position: top center;
+    background-size: cover;
+    background-image: url('../images/devs.png');
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Credits body css */
+
+#credScroll {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.credCont {
+    width: 100vw;
+    background-color: #EFEFEF;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+.credTitle {
+    align-self: center;
+    font-family: "Montserrat";
+    font-size: 5vw;
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+}
+
+.credSubT {
+    align-self: center;
+    font-family: "Montserrat";
+    font-size: 4vw;
+    margin-bottom: 1vh;
+}
+
+.benjamin {
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 5vw;
+    font-size: 4vw;
+}
+
+.link {
+    color: blue;
+    text-decoration: underline;
+}
