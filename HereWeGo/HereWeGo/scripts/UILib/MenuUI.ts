@@ -105,7 +105,7 @@ class MenuUI extends UIUtil.UIItem {
         //tap outside of menu to close check
         document.querySelector('#' + this.id).addEventListener('touchend', event => {
             //MUST CHANGE TO REFLECT MENU SIZE
-            if (event.changedTouches[0].clientX > MenuUI.widthFrac * screen.width) {
+            if ((event as any).changedTouches[0].clientX > MenuUI.widthFrac * screen.width) {
                 event.preventDefault();
                 this.closeMenu();
             }

@@ -360,6 +360,7 @@ p {
     position: fixed;
     width: 170vw;
     height: 100vh;
+    left: -5px;
     white-space: nowrap;
     transform: translateX(-70vw);
 }
