@@ -11,7 +11,7 @@
     "pretty": true,
     "outDir": "www/scripts",
     "module": "amd",
-    "target": "es6",
+    "target": "es6"
   },
   "exclude": ["platforms", "node_modules", "bower_components", "plugins/**/*.js", "merges", "res", "bin", "bld", "www", "build_scripts", "docs", "typedocgulp.js"]
 }

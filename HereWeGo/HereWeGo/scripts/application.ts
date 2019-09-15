@@ -19,8 +19,6 @@ import MenuUI = require('./UILib/MenuUI');
 import TextButtonUI = require('./UILib/TextButtonUI');
 import PopupUI = require('./UILib/PopupUI');
 import CreditUI = require('./UILib/CreditUI');
-import { NoSchool } from './WHSLib/ScheduleUtil';
-import InlineUI = require('./UILib/InlineUI');
 import ResourceUI = require('./UILib/ResouceUI');
 
 var http: GetLib = new GetLib();
